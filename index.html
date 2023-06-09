@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/tailwindcss.js"></script>
+    <script src="js/chart.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="p-3">
+      
+      <div class="grid md:grid-cols-3 grid-cols-1">
+        <form id="myForm" class="max-w-md m-4 p-4 bg-white rounded-lg shadow-lg">
+          <div class="mb-4">
+            <label for="x0Input" class="block font-medium text-gray-700"
+              >Enter x0:</label
+            >
+            <input
+              type="text"
+              name="x0Input"
+              id="x0Input"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              required
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="y0Input" class="block font-medium text-gray-700"
+              >Enter y0:</label
+            >
+            <input
+              type="text"
+              id="y0Input"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              required
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="hInput" class="block font-medium text-gray-700"
+              >Enter h:</label
+            >
+            <input
+              type="text"
+              id="hInput"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              required
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="xTargetInput" class="block font-medium text-gray-700"
+              >Enter x_target:</label
+            >
+            <input
+              type="text"
+              id="xTargetInput"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              required
+            />
+          </div>
+
+          <p class="mb-2 font-medium text-gray-700">SELECT METHOD:</p>
+          <div class="mb-4">
+            <input
+              type="radio"
+              id="taylorMethod"
+              name="method"
+              value="Taylor_method"
+              class="form-radio"
+              required
+            />
+            <label for="taylorMethod" class="ml-2">Taylor Method</label>
+          </div>
+
+          <div class="mb-4">
+            <input
+              type="radio"
+              id="eulerMethod"
+              name="method"
+              value="Euler_Method"
+              class="form-radio"
+              required
+            />
+            <label for="eulerMethod" class="ml-2">Euler Method</label>
+          </div>
+
+          <div class="mb-4">
+            <input
+              type="radio"
+              id="heunMethod"
+              name="method"
+              value="Heun_method"
+              class="form-radio"
+              required
+            />
+            <label for="heunMethod" class="ml-2">Heun Method</label>
+          </div>
+
+          <div class="mb-4">
+            <input
+              type="radio"
+              id="rungeKuttaMethod"
+              name="method"
+              value="Runge_Kutta_Method"
+              class="form-radio"
+              required
+            />
+            <label for="rungeKuttaMethod" class="ml-2">Runge Kutta Method</label>
+          </div>
+
+          <button
+            type="submit"
+            class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+          >
+            Submit
+          </button>
+        </form>
+        <div class="grid md:grid-cols-2 grid-cols-1 col-span-2 gap-4">
+          <div class="col-span-2">
+            <h2 class="md:text-6xl text-xl">Time Analysis</h2>
+            <canvas  id="myChart"></canvas>
+          </div>
+          <div class="col-span-2">
+            <div class="flex justify-between w-full b gap-3 ">
+              <div class="w-full">
+                <div class="max-w-sm rounded  shadow-lg">
+                  <div class="font-bold text-xl text-center p-6 flex flex-col justify-center items-center gap-3">
+                    <img src="assets/timer.png" class="w-24" alt=""> 
+                    <p class="text-purple-800 font-normal">START TIME <span class="text-red-500 font-semibold" id="startTimerValue"></span> </p>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full">
+                <div class="max-w-sm rounded shadow-lg">
+                  <div class="font-bold text-xl text-center p-6 flex flex-col justify-center items-center gap-3">
+                    <img src="assets/timer.png" class="w-24" alt=""> 
+                    <p class="text-purple-800 font-normal">END TIME <span class="text-red-500 font-semibold" id="endTimerValue"></span> </p>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="text-7xl p-5 ">Data Analysis</h2>
+      <div class="grid md:grid-cols-2 grid-cols-1 col-span-2 gap-3">
+        <div class="p-5">
+          <canvas id="myChart2"></canvas>
+        </div>
+        <div class="p-5 flex flex-col justify-center">
+          <h2 class="text-3xl font-bold">Result & Analysis</h2>
+          Present the results obtained from the numerical methods. Include tables, graphs, and plots to illustrate the solutions obtained for different ODEs. Compare the results with analytical solutions or reference solutions, if available, to assess the accuracy of the numerical methods. Discuss the limitations and sources of error in the numerical solutions.
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-2">
+            
+            <div class="rounded shadow-lg">
+              <div class="font-bold text-xl text-center p-6 flex flex-col justify-center items-center gap-3">
+                <p class="text-purple-800 font-semibold md:text-5xl text-xl">X0</p>
+                <p class="text-red-500 font-semibold" id="X0Value"></p>
+              </div>
+            </div>
+            <div class="rounded shadow-lg">
+              <div class="font-bold text-xl text-center p-6 flex flex-col justify-center items-center gap-3">
+                <p class="text-purple-800 font-semibold md:text-5xl text-xl">Y0</p>
+                <p class="text-red-500 font-semibold" id="Y0Value"></p>
+              </div>
+            </div>
+            <div class="rounded shadow-lg">
+              <div class="font-bold text-xl text-center p-6 flex flex-col justify-center items-center gap-3">
+                <p class="text-purple-800 font-semibold md:text-5xl text-xl">X`</p>
+                <p class="text-red-500 font-semibold" id="XResultValue"></p>
+              </div>
+            </div>
+            <div class="rounded shadow-lg">
+              <div class="font-bold text-xl text-center p-6 flex flex-col justify-center items-center gap-3">
+                <p class="text-purple-800 font-semibold md:text-5xl text-xl">Y`</p>
+                <p class="text-red-500 font-semibold" id="YResultValue"></p>
+              </div>
+            </div>
+
+           
+          </div>
+        </div>
+      </div>
+  </body>
+  <script src="js/script.js" ></script>
+</html>
