@@ -16,12 +16,16 @@ function handleFormSubmit() {
       'input[name="method"]:checked'
     ).value;
 
+    document.getElementById("x0Input").disabled= true;
+    document.getElementById("y0Input").disabled= true;
+    document.getElementById("hInput").disabled= true;
+    document.getElementById("xTargetInput").disabled= true;
     // -------------------------
     X0Value.innerText = x0;
     Y0Value.innerText = y0;
     XResultValue.innerText = xTarget;
     
-    event.target.reset();
+    // event.target.reset();
     //-----------------------------
 
     const ctx = document.getElementById("myChart");
