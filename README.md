@@ -4,4 +4,6 @@
 
 ## Code view [Click ME](https://github.com/Tahsin000/NUMERICAL-METHODS/blob/main/index.html)
 
+## Report [Click ME](./assets/README.md)
+
 ![ui-1](./assets/ui.png)
