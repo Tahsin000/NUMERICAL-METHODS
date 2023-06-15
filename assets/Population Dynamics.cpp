@@ -137,7 +137,3 @@ int main()
     }
     return 0;
 }
-
-
-https://docs.google.com/presentation/d/1uqWF4fQ_vMAy6QKvTAprXYI0JZGM0cTw/edit?usp=drivesdk&ouid=109340411065539363636&rtpof=true&sd=true
-
