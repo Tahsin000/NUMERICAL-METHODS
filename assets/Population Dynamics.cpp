@@ -104,7 +104,7 @@ void test_case(){
 
     double finalPopulation_eulerMethod = eulerMethod(initialPopulation, growthRate, timeStep, targetTime);
 
-    std::cout << "Final Population Euler's Method: " << finalPopulation_eulerMethod << "\t\t| error : "<< abs((finalPopulation_eulerMethod - RealValue) / RealValue) * 100<< std::endl;
+    cout << "Final Population Euler's Method: " << finalPopulation_eulerMethod << "\t\t| error : "<< abs((finalPopulation_eulerMethod - RealValue) / RealValue) * 100<< endl;
 
 
     // -------------------------------------
@@ -115,7 +115,7 @@ void test_case(){
     double finalPopulation_Heun_Method = solvePopulationDynamics_Heun_Method(initialPopulation, growthRate, timeStep, targetTime);
 
     // Display the final population value
-    std::cout << "Population Heun Method: " << finalPopulation_Heun_Method  << "\t| error : "<< abs((finalPopulation_Heun_Method - RealValue)/ RealValue) * 100    << std::endl;
+    cout << "Population Heun Method: " << finalPopulation_Heun_Method  << "\t| error : "<< abs((finalPopulation_Heun_Method - RealValue)/ RealValue) * 100    << endl;
 
 
     // -------------------------------------
@@ -125,7 +125,7 @@ void test_case(){
     double finalPopulation_RK4 = solvePopulationDynamics_RK4(initialPopulation, growthRate, timeStep, targetTime);
 
     // Display the final population value
-    std::cout << "Final Population RK4 Method: " << finalPopulation_RK4 << "\t\t| error : "<< abs((finalPopulation_RK4 - RealValue) / RealValue) * 100 << std::endl;
+    cout << "Final Population RK4 Method: " << finalPopulation_RK4 << "\t\t| error : "<< abs((finalPopulation_RK4 - RealValue) / RealValue) * 100 << endl;
     cout << "\n\n\n";
 }
 int main()
@@ -137,4 +137,7 @@ int main()
     }
     return 0;
 }
+
+
+https://docs.google.com/presentation/d/1uqWF4fQ_vMAy6QKvTAprXYI0JZGM0cTw/edit?usp=drivesdk&ouid=109340411065539363636&rtpof=true&sd=true
 
